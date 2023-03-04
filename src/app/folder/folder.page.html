@@ -1,21 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ folder }}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">{{ folder }}</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <div id="container" *ngIf="folder == 'Home'">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore Top Decks</p>
-  </div>
+    <div class="container d-flex flex-column align-items-center" *ngIf="folder === 'Home'">
+        <h1 class="text-capitalize fw-bold mt-5">META TOP</h1>
+        <p>Explore the top decks for:</p>
+
+        <div class="m-3 logo" [routerLink]="['/folder/Hearthstone']" routerLinkActive="router-link-active">
+            <img src="../../assets/img/hs_logo.png" alt="Hearthstone Logo">
+        </div>
+
+        <div class="m-3 logo" [routerLink]="['/folder/MarvelSnap']" routerLinkActive="router-link-active">
+            <img src="../../assets/img/ms_logo.png" alt="Marvel Snap Logo">
+        </div>
+    </div>
 </ion-content>
