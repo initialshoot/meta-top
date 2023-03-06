@@ -1,0 +1,41 @@
+[{
+        "class": "Druid",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_06c.webp"
+    },
+    {
+        "class": "Paladin",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_04d.webp"
+    },
+    {
+        "class": "Priest",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_09c.webp"
+    },
+    {
+        "class": "Death Knight",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_11a.webp"
+    },
+    {
+        "class": "Hunter",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_05b.webp"
+    },
+    {
+        "class": "Mage",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_08c.webp"
+    },
+    {
+        "class": "Warlock",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_07c.webp"
+    },
+    {
+        "class": "Demon Hunter",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_10a.webp"
+    },
+    {
+        "class": "Rogue",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_03b.webp"
+    },
+    {
+        "class": "Shaman",
+        "img": "https://art.hearthstonejson.com/v1/512x/HERO_02d.webp"
+    }
+]

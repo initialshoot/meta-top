@@ -26,4 +26,12 @@
             <img src="../../assets/img/ms_logo.png" alt="Marvel Snap Logo">
         </div>
     </div>
+
+    <div class="container d-flex flex-column align-items-center" *ngIf="folder === 'Hearthstone'">
+        <h3>Hearthstone</h3>
+    </div>
+
+    <div class="container d-flex flex-column align-items-center" *ngIf="folder === 'MarvelSnap'">
+        <h3>Marvel Snap</h3>
+    </div>
 </ion-content>
