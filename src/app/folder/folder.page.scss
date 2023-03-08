@@ -7,11 +7,6 @@ img.logos {
     cursor: pointer;
 }
 
-iframe {
-    width: 80vw;
-    height: 85vh;
-}
-
 // Hearthstone
 body {
     background-color: #fbf7f6;
@@ -151,4 +146,15 @@ body {
             }
         }
     }
+}
+
+// Marvel snap
+.accordion-button:focus {
+    border: none !important;
+    border-color: transparent !important;
+}
+
+.accordion-button:not(.collapsed) {
+    border: none !important;
+    border-color: transparent !important;
 }

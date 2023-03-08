@@ -10,5 +10,9 @@ export class AppComponent {
     { title: 'Hearthstone', url: '/folder/Hearthstone', icon: 'fa-solid fa-hat-wizard' },
     { title: 'MarvelSnap', url: '/folder/MarvelSnap', icon: 'fa-solid fa-cube' },
   ];
+
+  public logAction = [
+    { title: 'Logout', icon: 'fa-solid fa-right-from-bracket' },
+  ]
   constructor() {}
 }
