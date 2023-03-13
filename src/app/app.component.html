@@ -1,11 +1,9 @@
 <ion-app>
 
     <ion-split-pane contentId="main-content">
-        <ion-menu contentId="main-content" type="overlay">
+        <ion-menu side="start" contentId="main-content" type="overlay" *ngIf="route !== 'Login' && route !== 'Register'">
             <ion-content>
                 <ion-list id="home-list">
-                    <ion-list-header>Meta-Top</ion-list-header>
-                    <ion-note>user@metatop.com</ion-note>
 
                     <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
                         <ion-item class="mt-3" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
@@ -24,7 +22,36 @@
 
             </ion-content>
         </ion-menu>
+
+        <ion-menu side="end" contentId="main-content" type="overlay">
+            <ion-content>
+                <ion-list id="home-list">
+                    <ion-list-header>Meta-Top</ion-list-header>
+                    <ion-note>user@metatop.com</ion-note>
+
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of userPages; let i = index">
+                        <ion-item class="mt-3" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                            <i class="{{ p.icon }}" aria-hidden="true" slot="start"></i>
+                            <ion-label>{{ p.title }}</ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <div class="d-grid gap-2 mt-5" *ngFor="let action of logAction; let i = index">
+                        <button class="btn btn-secondary" type="button">
+                            <i class="{{ action.icon }}" aria-hidden="true" slot="start" class="mx-2"></i>
+                        {{ action.title }}
+                        </button>
+                    </div>
+
+                </ion-list>
+
+            </ion-content>
+        </ion-menu>
+
+
         <ion-router-outlet id="main-content"></ion-router-outlet>
     </ion-split-pane>
+
+
+
 
 </ion-app>
