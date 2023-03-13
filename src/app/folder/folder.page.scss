@@ -158,3 +158,20 @@ body {
     border: none !important;
     border-color: transparent !important;
 }
+
+// Map
+ion-content {
+    #map {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+.location-btn {
+    height: 50vh;
+}
+
+.fa-location-crosshairs {
+    font-size: 5rem;
+}
