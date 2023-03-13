@@ -53,7 +53,7 @@ export class FolderPage implements OnInit {
 
     locationButton.textContent = "Get Current Location";
     locationButton.classList.add("btn");
-    locationButton.classList.add("btn-secondary");
+    locationButton.classList.add("btn-dark");
     locationButton.classList.add("btn-lg");
     locationButton.classList.add("mt-3");
 
