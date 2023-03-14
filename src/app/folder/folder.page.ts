@@ -18,8 +18,6 @@ export class FolderPage implements OnInit {
 
   public hsDecks = []
 
-  public onePiece: any;
-
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {

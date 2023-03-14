@@ -3,7 +3,7 @@
         <ion-buttons slot="end">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Register</ion-title>
+        <ion-title>Sign In</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -27,12 +27,17 @@
             </ion-label>
             <ion-input required formControlName="conPassword" type="text"></ion-input>
         </ion-item>
-        <ion-button block color="primary" type="submit">
-            Login
-        </ion-button>
+        <div class="d-grid gap-2 col-6 mx-auto mt-5">
+
+            <button type="button" class="fs-2 btn btn-dark" block color="primary" type="submit" [routerLink]="['/folder/Home']" routerLinkActive="router-link-active">
+                Sign In
+            </button>
+
+        </div>
+
     </form>
 
-    <div>
-        <a class="fs-2" [routerLink]="['/Login']" routerLinkActive="router-link-active">Login</a>
+    <div class="d-grid gap-2 col-6 mx-auto mt-5">
+        <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/Login']" routerLinkActive="router-link-active">Login</button>
     </div>
 </ion-content>
