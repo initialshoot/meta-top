@@ -9,13 +9,13 @@
 
 <ion-content>
     <form>
-        <ion-item>
+        <ion-item class="m-5">
             <ion-label position="floating">E-Mail
                 <ion-text color="danger">*</ion-text>
             </ion-label>
             <ion-input required formControlName="email" type="text"></ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item class="m-5">
             <ion-label position="floating">Password
                 <ion-text color="danger">*</ion-text>
             </ion-label>
@@ -31,7 +31,11 @@
 
     </form>
 
-    <div class="d-grid gap-2 col-6 mx-auto mt-5">
-        <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/Register']" routerLinkActive="router-link-active">Sign In</button>
+    <div class="text-center fs-2 d-flex justify-content-center align-items-center m-5">
+        <ion-label>Dont have an account?</ion-label>
+    </div>
+
+    <div class=" d-grid gap-2 col-6 mx-auto">
+        <button type="button " class="fs-2 btn btn-dark " [routerLink]="[ '/SignIn'] " routerLinkActive="router-link-active ">Sign In</button>
     </div>
 </ion-content>

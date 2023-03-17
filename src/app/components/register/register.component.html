@@ -9,24 +9,25 @@
 
 <ion-content>
     <form>
-        <ion-item>
+        <ion-item class="m-5">
             <ion-label position="floating">E-Mail
                 <ion-text color="danger">*</ion-text>
             </ion-label>
             <ion-input required formControlName="email" type="text"></ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item class="m-5">
             <ion-label position="floating">Password
                 <ion-text color="danger">*</ion-text>
             </ion-label>
             <ion-input required formControlName="password" type="text"></ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item class="m-5">
             <ion-label position="floating">Confirm Password
                 <ion-text color="danger">*</ion-text>
             </ion-label>
             <ion-input required formControlName="conPassword" type="text"></ion-input>
         </ion-item>
+
         <div class="d-grid gap-2 col-6 mx-auto mt-5">
 
             <button type="button" class="fs-2 btn btn-dark" block color="primary" type="submit" [routerLink]="['/folder/Home']" routerLinkActive="router-link-active">
@@ -36,6 +37,10 @@
         </div>
 
     </form>
+
+    <div class="text-center fs-2 d-flex justify-content-center align-items-center m-5">
+        <ion-label>Already have an account?</ion-label>
+    </div>
 
     <div class="d-grid gap-2 col-6 mx-auto mt-5">
         <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/Login']" routerLinkActive="router-link-active">Login</button>

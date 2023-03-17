@@ -11,7 +11,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'Login', component: LoginComponent },
-  { path: 'Register', component: RegisterComponent },
+  { path: 'SignIn', component: RegisterComponent },
   { path: 'Start', component: StartComponent },
   {
     path: 'folder/:id',
