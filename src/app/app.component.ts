@@ -16,12 +16,6 @@ export class AppComponent implements OnInit {
     { title: 'Location', url: '/folder/Location', icon: 'fa-solid fa-location-crosshairs' },
   ];
 
-  public userPages = [
-    { title: 'Login', url: '/Login', icon: 'fa-solid fa-right-to-bracket' },
-    { title: 'Sign In', url: '/SignIn', icon: 'fa-solid fa-pen-to-square' },
-    { title: 'Exit', url: '/Start', icon: 'fa-solid fa-right-from-bracket' },
-  ];
-
   public logAction = [
     { title: 'Logout', icon: 'fa-solid fa-right-from-bracket' },
   ]

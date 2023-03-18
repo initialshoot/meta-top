@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-buttons slot="end">
-            <ion-menu-button></ion-menu-button>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
         </ion-buttons>
         <ion-title>Sign In</ion-title>
     </ion-toolbar>
@@ -30,7 +30,7 @@
 
         <div class="d-grid gap-2 col-6 mx-auto mt-5">
 
-            <button type="button" class="fs-2 btn btn-dark" block color="primary" type="submit" [routerLink]="['/folder/Home']" routerLinkActive="router-link-active">
+            <button type="button" class="fs-2 btn btn-dark" block color="primary" type="submit" [routerLink]="['/Login']" routerLinkActive="router-link-active">
                 Sign In
             </button>
 
@@ -38,11 +38,11 @@
 
     </form>
 
-    <div class="text-center fs-2 d-flex justify-content-center align-items-center m-5">
+    <div class="text-center fs-2 d-flex justify-content-center align-items-center mt-4">
         <ion-label>Already have an account?</ion-label>
     </div>
 
-    <div class="d-grid gap-2 col-6 mx-auto mt-5">
+    <div class="d-grid gap-2 col-6 mx-auto mt-3">
         <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/Login']" routerLinkActive="router-link-active">Login</button>
     </div>
 </ion-content>
