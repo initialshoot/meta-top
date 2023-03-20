@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -8,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class AppComponent implements OnInit {
 
   public route!: string;
+
+  public path!: string;
 
   public appPages = [
     { title: 'Home', url: '/folder/Home', icon: 'fa-solid fa-house' },
@@ -20,10 +23,11 @@ export class AppComponent implements OnInit {
     { title: 'Logout', icon: 'fa-solid fa-right-from-bracket' },
   ]
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute
+    ) {}
 
   ngOnInit() {
     this.route = this.activatedRoute.snapshot.paramMap.get('id') as string;
-    console.log(this.route);
   }
 }
