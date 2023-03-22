@@ -8,12 +8,15 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent  implements OnInit {
 
+  public checked = true;
+
   constructor(private router: Router) { }
 
   ngOnInit() {}
 
   openTerms() {
-    this.router.navigate(['/Login']);
+    this.checked = false;
   }
+  
 
 }
