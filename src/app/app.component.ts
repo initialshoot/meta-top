@@ -1,5 +1,6 @@
 import { Component, OnInit,  } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -24,10 +25,22 @@ export class AppComponent implements OnInit {
   ]
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private authSvc: AuthService
     ) {}
 
   ngOnInit() {
     this.route = this.activatedRoute.snapshot.paramMap.get('id') as string;
+  }
+
+  async logout() {
+    try {
+      this.router.navigate(['/Start'])
+      await this.authSvc.logout()
+    } catch(error) {
+      console.log(error);
+    }
+    
   }
 }

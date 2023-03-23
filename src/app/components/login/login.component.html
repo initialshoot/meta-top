@@ -8,22 +8,22 @@
 </ion-header>
 
 <ion-content>
-    <form>
+    <form [formGroup]="loginUser" (ngSubmit)="login()">
         <ion-item class="m-5">
             <ion-label position="floating">E-Mail
                 <ion-text color="danger">*</ion-text>
             </ion-label>
-            <ion-input required formControlName="email" type="text"></ion-input>
+            <ion-input required formControlName="email" formControlName="email" formControlName="email" type="email"></ion-input>
         </ion-item>
         <ion-item class="m-5">
             <ion-label position="floating">Password
                 <ion-text color="danger">*</ion-text>
             </ion-label>
-            <ion-input required formControlName="password" type="text"></ion-input>
+            <ion-input required formControlName="password" type="password"></ion-input>
         </ion-item>
         <div class="d-grid gap-2 col-6 mx-auto mt-5">
 
-            <button type="button" class="fs-2 btn btn-dark" block color="primary" type="submit" [routerLink]="['/folder/Home']" routerLinkActive="router-link-active">
+            <button [disabled]="loginUser.invalid" type="submit" class="fs-2 btn btn-dark" block color="primary">
                 Login
             </button>
 
@@ -36,6 +36,6 @@
     </div>
 
     <div class=" d-grid gap-2 col-6 mx-auto">
-        <button type="button " class="fs-2 btn btn-dark " [routerLink]="[ '/SignIn'] " routerLinkActive="router-link-active ">Sign In</button>
+        <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/SignIn']" routerLinkActive="router-link-active">Sign In</button>
     </div>
 </ion-content>

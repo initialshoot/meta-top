@@ -14,7 +14,7 @@
                         </ion-item>
                     </ion-menu-toggle>
                     <ion-menu-toggle auto-hide="false" *ngFor="let action of logAction; let i = index">
-                        <ion-item button class="mt-3" routerDirection="root" [routerLink]="['/Start']" routerLinkActive="router-link-active" lines="none" detail="false" routerLinkActive="selected">
+                        <ion-item button class="mt-3" routerDirection="root" (click)="logout()" lines="none" detail="false" routerLinkActive="selected">
                             <i class="{{ action.icon }}" aria-hidden="true" slot="start"></i>
                             <ion-label>{{ action.title }}</ion-label>
                         </ion-item>

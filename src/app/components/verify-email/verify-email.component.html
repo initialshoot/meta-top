@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Verify Email</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="d-flex flex-column align-items-center justify-content-center show-map p-5" id="map">
+
+        <h1 class="mt-5 fs-1 mb-5">Account Not Verified</h1>
+
+        <h4 class="mt-5">Se ha enviado un correo de verificación a su email</h4>
+        <h5 class="mt-5 mb-5">Por favor revisa tu bandeja de entrada o la carpeta de spam</h5>
+
+        <div class="d-grid gap-2 col-6 mx-auto mt-5 mb-5">
+            <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/Start']" routerLinkActive="router-link-active">Regresar</button>
+        </div>
+    </div>
+
+</ion-content>

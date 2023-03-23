@@ -8,126 +8,144 @@
 </ion-header>
 
 <ion-content>
-    <form>
-        <ion-item class="m-5">
-            <ion-label position="floating">E-Mail
-                <ion-text color="danger">*</ion-text>
-            </ion-label>
-            <ion-input required formControlName="email" type="text"></ion-input>
-        </ion-item>
-        <ion-item class="m-5">
-            <ion-label position="floating">Password
-                <ion-text color="danger">*</ion-text>
-            </ion-label>
-            <ion-input required formControlName="password" type="text"></ion-input>
-        </ion-item>
-        <ion-item class="m-5">
-            <ion-label position="floating">Confirm Password
-                <ion-text color="danger">*</ion-text>
-            </ion-label>
-            <ion-input required formControlName="conPassword" type="text"></ion-input>
-        </ion-item>
-        <div class="d-grid gap-2 col-8 mx-auto mt-4">
+    <div *ngIf="!loading">
 
-            <button type="button" class="fs-4 btn btn-dark" id="click-trigger" block color="primary" routerLinkActive="router-link-active" (click)="openTerms()"> 
+        <form [formGroup]="userRegister" (ngSubmit)="register()">
+            <ion-item class="m-5">
+                <ion-label position="floating">E-Mail
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required formControlName="email" [(ngModel)]="userData.email" type="email"></ion-input>
+            </ion-item>
+            <ion-item class="m-5">
+                <ion-label position="floating">Password
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required formControlName="password" [(ngModel)]="userData.password" type="password"></ion-input>
+            </ion-item>
+            <ion-item class="m-5">
+                <ion-label position="floating">Confirm Password
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required formControlName="confirmPassword" type="password"></ion-input>
+            </ion-item>
+            <div class="d-grid gap-2 col-8 mx-auto mt-4">
+
+                <button type="button" class="fs-4 btn btn-dark" id="privacy-trigger" block color="primary" routerLinkActive="router-link-active" (click)="openPrivacy()"> 
                 Privacy Notice
             </button>
 
-            <ion-popover trigger="click-trigger" triggerAction="click" side="right" alignment="center" [dismissOnSelect]="true">
-                <ng-template>
-                    <div class="p-5">
-                        <h1>Privacy Notice</h1>
-                        <p>In Meta-Top, we recognize the importance of our users' privacy and are committed to protecting the personal information we collect. This privacy notice describes how we collect, use, and protect the personal information we collect
-                            from users of our application.</p>
-                        <h2>Information we collect</h2>
-                        <p>The application collects personal information from the user such as their username, password, and email address. This information is collected for the sole purpose of allowing users to log in to the application and save their favorite
-                            items.
-                        </p>
-                        <h2>How we use the information</h2>
-                        <p>The collected information is used solely to allow users to log in to the application and save their favorite items. We do not share or sell users' personal information to third parties.</p>
-                        <h2>How we protect the information</h2>
-                        <p>We are committed to protecting our users' personal information and use reasonable security measures to protect the information against unauthorized access, disclosure, or alteration. However, we cannot guarantee the security of
-                            the information collected, as no method of transmission over the internet or electronic storage is 100% secure.</p>
-                        <h2>User's rights</h2>
-                        <p>Users have the right to access, modify, and delete their personal information at any time. If a user wishes to delete their account and associated personal information, they may do so through the application's settings.</p>
-                        <h2>Changes to this privacy notice</h2>
-                        <p>We reserve the right to change this privacy notice at any time and without prior notice. Changes will be effective immediately upon posting. By continuing to use the application after the changes have been posted, users accept
-                            the terms of the latest version of the privacy notice.</p>
-                        <h2>Contact</h2>
-                        <p>If you have any questions or concerns about this privacy notice or our privacy practices, please contact us through the application's support email.</p>
-                        <h2>Effective Date: [March 16, 2023]</h2>
+                <ion-popover trigger="privacy-trigger" triggerAction="click" side="right" alignment="center" [dismissOnSelect]="true">
+                    <ng-template>
+                        <div class="p-5">
+                            <h1>Privacy Notice</h1>
+                            <p>In Meta-Top, we recognize the importance of our users' privacy and are committed to protecting the personal information we collect. This privacy notice describes how we collect, use, and protect the personal information we
+                                collect from users of our application.</p>
+                            <h2>Information we collect</h2>
+                            <p>The application collects personal information from the user such as their username, password, and email address. This information is collected for the sole purpose of allowing users to log in to the application and save their
+                                favorite items.
+                            </p>
+                            <h2>How we use the information</h2>
+                            <p>The collected information is used solely to allow users to log in to the application and save their favorite items. We do not share or sell users' personal information to third parties.</p>
+                            <h2>How we protect the information</h2>
+                            <p>We are committed to protecting our users' personal information and use reasonable security measures to protect the information against unauthorized access, disclosure, or alteration. However, we cannot guarantee the security
+                                of the information collected, as no method of transmission over the internet or electronic storage is 100% secure.</p>
+                            <h2>User's rights</h2>
+                            <p>Users have the right to access, modify, and delete their personal information at any time. If a user wishes to delete their account and associated personal information, they may do so through the application's settings.</p>
+                            <h2>Changes to this privacy notice</h2>
+                            <p>We reserve the right to change this privacy notice at any time and without prior notice. Changes will be effective immediately upon posting. By continuing to use the application after the changes have been posted, users accept
+                                the terms of the latest version of the privacy notice.</p>
+                            <h2>Contact</h2>
+                            <p>If you have any questions or concerns about this privacy notice or our privacy practices, please contact us through the application's support email.</p>
+                            <h2>Effective Date: [March 16, 2023]</h2>
 
-                        <div class="d-grid gap-2 col-8 mx-auto mt-4 mt-5">
-                            <button type="button" class="fs-4 btn btn-dark">Close</button>
+                            <div class="d-grid gap-2 col-8 mx-auto mt-4 mt-5">
+                                <button type="button" class="fs-4 btn btn-dark">Close</button>
+                            </div>
+
+
+
                         </div>
 
+                    </ng-template>
+                </ion-popover>
 
+            </div>
 
-                    </div>
+            <div class="d-grid gap-2 col-8 mx-auto mt-4">
 
-                </ng-template>
-            </ion-popover>
-
-        </div>
-
-        <ion-item class="rounded-pill m-5" disabled="{{checked}}">
-            <ion-checkbox required slot="start"></ion-checkbox>
-            <ion-label>I accept the privacy Notice</ion-label>
-        </ion-item>
-
-        <div class="d-grid gap-2 col-8 mx-auto mt-4">
-
-            <button type="button" class="fs-4 btn btn-dark" id="click-trigger" block color="primary" routerLinkActive="router-link-active" (click)="openTerms()"> 
-                Privacy Notice
+                <button type="button" class="fs-4 btn btn-dark" id="consent-trigger" block color="primary" routerLinkActive="router-link-active" (click)="openConsent()"> 
+                Letter of Informed Consent
             </button>
 
-            <ion-popover trigger="click-trigger" triggerAction="click" side="right" alignment="center" [dismissOnSelect]="true">
-                <ng-template>
-                    <div class="p-5">
-                        <h1>Privacy Notice</h1>
-                        <p>Estimado usuario, Le agradecemos por utilizar nuestra aplicación de Android. Para poder proporcionarle los servicios que ofrece nuestra aplicación, necesitamos recopilar y procesar algunos de sus datos personales. En este sentido,
-                            nos gustaría informarle sobre los datos que recopilamos, cómo los utilizamos, y cómo los protegemos. Los datos personales que recopilamos son su nombre de usuario, contraseña y dirección de correo electrónico. Estos datos se
-                            utilizan únicamente para permitirle iniciar sesión en la aplicación y guardar sus elementos favoritos. No compartimos ni vendemos sus datos personales a terceros. Le informamos que, al utilizar nuestra aplicación, acepta y
-                            da su consentimiento para que procesemos sus datos personales en la forma descrita en esta carta de consentimiento de datos personales. Asimismo, le recordamos que tiene derecho a acceder, modificar y eliminar sus datos personales
-                            en cualquier momento. Si desea eliminar su cuenta y los datos personales asociados, puede hacerlo a través de la configuración de la aplicación. Si tiene alguna pregunta o inquietud sobre la privacidad de sus datos personales
-                            o sobre esta carta de consentimiento de datos personales, no dude en contactarnos a través del correo electrónico de soporte de la aplicación. Gracias por utilizar nuestra aplicación. Atentamente, [Nombre del representante
-                            autorizado]</p>
+                <ion-popover trigger="consent-trigger" triggerAction="click" side="right" alignment="center" [dismissOnSelect]="true">
+                    <ng-template>
+                        <div class="p-5 mb-5">
+                            <h1>Letter of Informed Consent</h1>
+                            <h2>Dear user, </h2>
+                            <p>
+                                Thank you for using Meta-Top app. In order to provide you with the services offered by our application, we need to collect and process some of your personal data. In this regard, we would like to inform you about the data we collect, how we use it, and
+                                how we protect it.
+                            </p>
+                            <p>
+                                The personal data we collect is your username, password, and email address. This data is used solely to allow you to log in to the application and save your favorite items. We do not share or sell your personal data to third parties.
+                            </p>
+                            <p>
+                                We inform you that, by using our application, you accept and give your consent for us to process your personal data as described in this personal data consent letter.
+                            </p>
+                            <p>
+                                We also remind you that you have the right to access, modify, and delete your personal data at any time. If you wish to delete your account and associated personal data, you can do so through the application's settings.
+                            </p>
+                            <p>
+                                If you have any questions or concerns about the privacy of your personal data or about this personal data consent letter, please do not hesitate to contact us through the application's support email.
+                            </p>
+                            Thank you for using our application. Sincerely, Omar Alejandro Sánchez Cuevas
 
 
 
-                        <div class="d-grid gap-2 col-8 mx-auto mt-4 mt-5">
-                            <button type="button" class="fs-4 btn btn-dark">Close</button>
+                            <div class="d-grid gap-2 col-8 mx-auto mt-4 mt-5">
+                                <button type="button" class="fs-4 btn btn-dark">Close</button>
+                            </div>
+
+
+
                         </div>
 
+                    </ng-template>
+                </ion-popover>
 
+            </div>
 
-                    </div>
+            <ion-item class="rounded-pill m-3" disabled="{{checked}}">
+                <ion-checkbox [indeterminate]="true" required formControlName="privacy" slot="start"></ion-checkbox>
+                <ion-label>I accept the privacy Notice</ion-label>
+            </ion-item>
 
-                </ng-template>
-            </ion-popover>
+            <ion-item class="rounded-pill m-3" disabled="{{checked2}}">
+                <ion-checkbox [indeterminate]="true" required formControlName="consent" slot="start"></ion-checkbox>
+                <ion-label>I accept the Letter of Informed Consent</ion-label>
+            </ion-item>
 
-        </div>
+            <div class="d-grid gap-2 col-6 mx-auto mt-4">
 
-        <ion-item class="rounded-pill m-5" disabled="{{checked}}">
-            <ion-checkbox required slot="start"></ion-checkbox>
-            <ion-label>I accept the privacy Notice</ion-label>
-        </ion-item>
-
-        <div class="d-grid gap-2 col-6 mx-auto mt-4">
-
-            <button type="button" class="fs-2 btn btn-dark" block color="primary" type="submit" [routerLink]="['/Login']" routerLinkActive="router-link-active">
+                <button type="submit" class="fs-2 btn btn-dark" block color="primary" [disabled]="userRegister.invalid">
                 Sign In
             </button>
 
+            </div>
+
+        </form>
+
+        <div class="text-center fs-2 d-flex justify-content-center align-items-center mt-4">
+            <ion-label>Already have an account?</ion-label>
         </div>
 
-    </form>
+        <div class="d-grid gap-2 col-6 mx-auto mt-3">
+            <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/Login']" routerLinkActive="router-link-active">Login</button>
+        </div>
 
-    <div class="text-center fs-2 d-flex justify-content-center align-items-center mt-4">
-        <ion-label>Already have an account?</ion-label>
     </div>
 
-    <div class="d-grid gap-2 col-6 mx-auto mt-3">
-        <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/Login']" routerLinkActive="router-link-active">Login</button>
-    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
+
 </ion-content>

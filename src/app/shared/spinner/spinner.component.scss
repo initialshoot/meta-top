@@ -1,8 +1,3 @@
-ion-popover {
-    --width: 100%;
-}
-
-//Spinner
 .ripple-loader {
     position: relative;
     width: 400px;
@@ -34,5 +29,13 @@ ion-popover {
         width: 400px;
         height: 400px;
         opacity: 0;
+    }
+}
+
+ion-content {
+    #map {
+        width: 100%;
+        height: 100%;
+        display: block;
     }
 }

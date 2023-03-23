@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +11,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent  implements OnInit {
 
-  constructor() { }
+  loginUser: FormGroup;
 
-  ngOnInit() {}
+  loading: boolean = false;
+
+  constructor(
+    private fb: FormBuilder,
+    private afAuth: AngularFireAuth,
+    private toastr: ToastrService,
+    private router: Router,
+  ) {
+    this.loginUser = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    })
+  }
+
+  ngOnInit(): void {
+  }
+
+  login() {
+    const email = this.loginUser.value.email;
+    const password = this.loginUser.value.password;
+
+    this.loading = true;
+
+    this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
+      if(user.user?.emailVerified) {
+        this.router.navigate(['/folder/Home'])
+      } else {
+        this.router.navigate(['/Verify-Email'])
+      }
+      
+    }).catch((error) => {
+      this.loading = false;
+      this.toastr.error(error, 'Error')
+    })
+  }
 
 }

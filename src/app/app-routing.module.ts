@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StartComponent } from './components/start/start.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'Login', component: LoginComponent },
   { path: 'SignIn', component: RegisterComponent },
   { path: 'Start', component: StartComponent },
+  { path: 'Verify-Email', component: VerifyEmailComponent },
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
