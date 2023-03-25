@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ActivatedRoute } from '@angular/router';
+import { MenuController } from '@ionic/angular';
+import { UserI } from '../models/user';
+import { AuthService } from '../service/auth.service';
+import { FirestoreService } from '../service/firestore.service';
 
 declare var google: { maps: { Map: new (arg0: any, arg1: { center: { lat: number; lng: number; }; zoom: number; disableDefaultUI: boolean; }) => any; InfoWindow: new () => any; ControlPosition: { TOP_CENTER: string | number; }; event: { addListenerOnce: (arg0: any, arg1: string, arg2: () => void) => void; }; }; }
 
@@ -18,8 +23,13 @@ export class FolderPage implements OnInit {
 
   public hsDecks = []
 
-  constructor(private activatedRoute: ActivatedRoute) {}
-
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private menu: MenuController
+    ) 
+    {
+    this.menu.enable(true);
+   }
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id') as string;
   }
@@ -31,6 +41,8 @@ export class FolderPage implements OnInit {
       } catch (err) {}
     }
   }
+
+// Load Map functions
 
   async loadMap() {
     // create a new map by passing HTMLElement
@@ -81,7 +93,5 @@ export class FolderPage implements OnInit {
       mapEle.classList.add('show-map');
     });
   }
-
-
 }
 

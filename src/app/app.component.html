@@ -5,7 +5,7 @@
             <ion-content>
                 <ion-list id="home-list">
                     <ion-list-header>Meta-Top</ion-list-header>
-                    <ion-note>user@metatop.com</ion-note>
+                    <ion-note>{{ userInfo.email }}</ion-note>
 
                     <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
                         <ion-item button class="mt-3" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">

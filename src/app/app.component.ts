@@ -1,6 +1,8 @@
 import { Component, OnInit,  } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserI } from './models/user';
 import { AuthService } from './service/auth.service';
+import { FirestoreService } from './service/firestore.service';
 
 @Component({
   selector: 'app-root',
@@ -24,11 +26,36 @@ export class AppComponent implements OnInit {
     { title: 'Logout', icon: 'fa-solid fa-right-from-bracket' },
   ]
 
+  logged: boolean = false;
+
+  userInfo: UserI = {
+    uid: null,
+    email: null,
+    password: null,
+    role: null
+  };
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private authSvc: AuthService
-    ) {}
+    private authSvc: AuthService,
+    private firestore: FirestoreService
+    ) {
+
+      this.authSvc.getCurrentUser().subscribe( res => {
+        if (res) {
+          if (res.emailVerified == true) {
+            this.logged = true;
+            this.getDatosUser(res.uid)
+          } else {
+            this.logged = false;
+          }
+        } else {
+          this.logged = false;
+        }
+      })
+
+    }
 
   ngOnInit() {
     this.route = this.activatedRoute.snapshot.paramMap.get('id') as string;
@@ -42,5 +69,18 @@ export class AppComponent implements OnInit {
       console.log(error);
     }
     
+  }
+
+  // Firebase User
+
+  getDatosUser(uid: string) {
+    const path = 'Users';
+    const id = uid;
+    this.firestore.getDoc<UserI>(path, id).subscribe( res => {
+      if (res) {
+        this.userInfo = res
+        console.log(this.userInfo)
+      }
+    })
   }
 }

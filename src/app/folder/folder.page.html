@@ -18,19 +18,18 @@
         <h1 class="fw-bold mt-5 display-1">META TOP</h1>
         <p class="mb-5 fs-2">Explore the top decks for:</p>
 
-        <div class="logo mt-5 mb-5" [routerLink]="['/folder/Hearthstone']" routerLinkActive="router-link-active">
+        <div class="logo mt-3 mb-3" [routerLink]="['/folder/Hearthstone']" routerLinkActive="router-link-active">
             <img class="logos" src="../../assets/img/hs_logo.png" alt="Hearthstone Logo">
         </div>
 
-        <div class="logo mt-5" [routerLink]="['/folder/MarvelSnap']" routerLinkActive="router-link-active">
+        <div class="logo mt-3 mb-5" [routerLink]="['/folder/MarvelSnap']" routerLinkActive="router-link-active">
             <img class="logos" src="../../assets/img/ms_logo.png" alt="Marvel Snap Logo">
         </div>
     </div>
 
     <div id="home-container" class="container d-flex flex-column align-items-center" *ngIf="folder === 'Hearthstone'">
-        <h3 class="mb-5">Hearthstone</h3>
 
-        <div class="panel-content">
+        <div class="panel-content mt-3 mb-5">
             <ul class="class-list class-ranking">
                 <li class="class-item" style="background-image: url(https://art.hearthstonejson.com/v1/512x/HERO_04d.webp);background-position-y: 20%;">
                     <div class="color-overlay paladin"></div>
@@ -116,7 +115,6 @@
     </div>
 
     <div class="container d-flex flex-column align-items-center " *ngIf="folder === 'MarvelSnap' ">
-        <h3 class="mb-3">Marvel Snap</h3>
 
         <h4>TIER 1</h4>
 

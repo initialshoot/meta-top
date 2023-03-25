@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -20,11 +21,14 @@ export class LoginComponent  implements OnInit {
     private afAuth: AngularFireAuth,
     private toastr: ToastrService,
     private router: Router,
+    private menu: MenuController
   ) {
     this.loginUser = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     })
+
+    this.menu.enable(false);
   }
 
   ngOnInit(): void {
@@ -38,6 +42,7 @@ export class LoginComponent  implements OnInit {
 
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
       if(user.user?.emailVerified) {
+        this.menu.enable(true);
         this.router.navigate(['/folder/Home'])
       } else {
         this.router.navigate(['/Verify-Email'])

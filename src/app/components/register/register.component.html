@@ -11,19 +11,19 @@
     <div *ngIf="!loading">
 
         <form [formGroup]="userRegister" (ngSubmit)="register()">
-            <ion-item class="m-5">
+            <ion-item class="m-3">
                 <ion-label position="floating">E-Mail
                     <ion-text color="danger">*</ion-text>
                 </ion-label>
                 <ion-input required formControlName="email" [(ngModel)]="userData.email" type="email"></ion-input>
             </ion-item>
-            <ion-item class="m-5">
+            <ion-item class="m-3">
                 <ion-label position="floating">Password
                     <ion-text color="danger">*</ion-text>
                 </ion-label>
                 <ion-input required formControlName="password" [(ngModel)]="userData.password" type="password"></ion-input>
             </ion-item>
-            <ion-item class="m-5">
+            <ion-item class="m-3">
                 <ion-label position="floating">Confirm Password
                     <ion-text color="danger">*</ion-text>
                 </ion-label>
@@ -140,7 +140,7 @@
             <ion-label>Already have an account?</ion-label>
         </div>
 
-        <div class="d-grid gap-2 col-6 mx-auto mt-3">
+        <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-5">
             <button type="button" class="fs-2 btn btn-dark" [routerLink]="['/Login']" routerLinkActive="router-link-active">Login</button>
         </div>
 

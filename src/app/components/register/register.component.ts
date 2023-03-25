@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { UserI } from 'src/app/models/user';
 import { FirestoreService } from 'src/app/service/firestore.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -39,7 +40,8 @@ export class RegisterComponent  implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private authSvc: AuthService,
-    private frservice: FirestoreService
+    private frservice: FirestoreService,
+    private menu: MenuController
 
     ) { 
 
@@ -50,6 +52,8 @@ export class RegisterComponent  implements OnInit {
         privacy: ['', [Validators.required, Validators.requiredTrue]],
         consent: ['', [Validators.required, Validators.requiredTrue]]
       })
+
+      this.menu.enable(false);
 
     }
 
@@ -67,10 +71,6 @@ export class RegisterComponent  implements OnInit {
     const email = this.userRegister.value.email;
     const password = this.userRegister.value.password;
     const confirmPassword = this.userRegister.value.confirmPassword;
-
-    this.userRegister.reset();
-
-
 
     if((password.length  || confirmPassword.length) < 8) {
       this.toastr.error('La contraseña debe de contener 8 caracteres como minimo', 'Error');
@@ -93,6 +93,7 @@ export class RegisterComponent  implements OnInit {
 
     this.authSvc.register(email, password).then(async (result:any) => {
       this.res = result?.user;
+      this.userRegister.reset();
       await this.registerDB();
       await this.verifyEmail();
       
