@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ActivatedRoute } from '@angular/router';
 import { MenuController } from '@ionic/angular';
-import { UserI } from '../models/user';
-import { AuthService } from '../service/auth.service';
-import { FirestoreService } from '../service/firestore.service';
+
 
 declare var google: { maps: { Map: new (arg0: any, arg1: { center: { lat: number; lng: number; }; zoom: number; disableDefaultUI: boolean; }) => any; InfoWindow: new () => any; ControlPosition: { TOP_CENTER: string | number; }; event: { addListenerOnce: (arg0: any, arg1: string, arg2: () => void) => void; }; }; }
 
@@ -79,7 +76,7 @@ export class FolderPage implements OnInit {
             };
   
             infoWindow.setPosition(pos);
-            infoWindow.setContent('<div class="fs-2 fw-bold black btn-dark p-2 rounded"> You Are Here <i class="fa-solid fa-location-dot"></i> </div>');
+            infoWindow.setContent('<div class="fs-4 fw-bold black btn-dark p-2 rounded"> You Are Here <i class="fa-solid fa-location-dot"></i> </div>');
             infoWindow.open(this.map);
             this.map.setCenter(pos);  
           }

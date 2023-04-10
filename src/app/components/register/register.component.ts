@@ -72,8 +72,6 @@ export class RegisterComponent  implements OnInit {
     const password = this.userRegister.value.password;
     const confirmPassword = this.userRegister.value.confirmPassword;
 
-    console.log('entre en la función hasta arriba')
-
     if(password !== confirmPassword) {
       this.toastr.error('Las contraseñas no coinciden', 'Error');
       console.log('Las contraseñas no coinciden')

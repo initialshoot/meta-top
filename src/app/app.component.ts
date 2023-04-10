@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserI } from './models/user';
 import { AuthService } from './service/auth.service';
 import { FirestoreService } from './service/firestore.service';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -39,7 +40,8 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private authSvc: AuthService,
-    private firestore: FirestoreService
+    private firestore: FirestoreService,
+    private menu: MenuController
     ) {
 
       this.authSvc.getCurrentUser().subscribe( res => {
@@ -65,6 +67,7 @@ export class AppComponent implements OnInit {
     try {
       this.router.navigate(['/Start'])
       await this.authSvc.logout()
+      this.menu.enable(false);
     } catch(error) {
       console.log(error);
     }

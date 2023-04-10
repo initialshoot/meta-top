@@ -50,7 +50,7 @@ export class LoginComponent  implements OnInit {
       
     }).catch((error) => {
       this.loading = false;
-      this.toastr.error(error, 'Error')
+      this.toastr.error(error.code, 'Error')
     })
   }
 
