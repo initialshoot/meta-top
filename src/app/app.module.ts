@@ -27,10 +27,11 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StartComponent } from './components/start/start.component';
+import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
 
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent,RegisterComponent,StartComponent,VerifyEmailComponent,SpinnerComponent],
+  declarations: [AppComponent,LoginComponent,RegisterComponent,StartComponent,VerifyEmailComponent,SpinnerComponent,ResetPassComponent],
   imports: [
     CommonModule,
     BrowserModule, 

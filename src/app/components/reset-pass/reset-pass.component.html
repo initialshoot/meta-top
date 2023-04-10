@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Reset Password</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="d-flex justify-content-center flex-column align-items-center p-5">
+        <h2 class="mt-5 text-center">Email</h2>
+
+        <form [formGroup]="recoverUser" (ngSubmit)="recover()">
+
+            <ion-item class="m-5">
+                <ion-label position="floating">E-Mail
+                    <ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required formControlName="email" formControlName="email" formControlName="email" type="email"></ion-input>
+                <span *ngIf="recoverUser.get('email')?.hasError('email') && recoverUser.get('email')?.touched" class="text-light">
+                          The <strong>email</strong> is invalid!
+                      </span>
+            </ion-item>
+
+            <div class="d-flex justify-content-center">
+
+                <button [disabled]="recoverUser.invalid" type="submit" class="fs-1 btn btn-dark" block color="primary">
+                        Send
+                      </button>
+
+            </div>
+
+        </form>
+    </div>
+
+
+</ion-content>

@@ -87,7 +87,7 @@ export class FolderPage implements OnInit {
   
     google.maps.event.addListenerOnce(this.map, 'idle', () => {
       /*this.renderMarkers();*/
-      mapEle.classList.add('show-map');
+      mapEle.classList.add('');
     });
   }
 }
