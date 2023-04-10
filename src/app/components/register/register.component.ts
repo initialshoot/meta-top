@@ -48,7 +48,7 @@ export class RegisterComponent  implements OnInit {
       this.userRegister = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.pattern(this.passwordPatern)]],
-        confirmPassword: ['', Validators.required],
+        confirmPassword: ['', [Validators.required, Validators.pattern(this.passwordPatern)]],
         privacy: ['', [Validators.required, Validators.requiredTrue]],
         consent: ['', [Validators.required, Validators.requiredTrue]]
       })
@@ -72,20 +72,11 @@ export class RegisterComponent  implements OnInit {
     const password = this.userRegister.value.password;
     const confirmPassword = this.userRegister.value.confirmPassword;
 
-    if((password.length  || confirmPassword.length) < 8) {
-      this.toastr.error('La contraseña debe de contener 8 caracteres como minimo', 'Error');
-      return;
-    }
-
-    if (this.passwordPatern.test(password)) {
-      
-    } else {
-      this.toastr.error('La contraseña debe contener 1 letra minúscula, 1 letra mayúscula, 1 número, 1 carácter especial y tener al menos 8 caracteres', 'Error');
-      return;
-    }
+    console.log('entre en la función hasta arriba')
 
     if(password !== confirmPassword) {
       this.toastr.error('Las contraseñas no coinciden', 'Error');
+      console.log('Las contraseñas no coinciden')
       return;
     }
 

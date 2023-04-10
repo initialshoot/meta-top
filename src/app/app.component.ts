@@ -79,7 +79,6 @@ export class AppComponent implements OnInit {
     this.firestore.getDoc<UserI>(path, id).subscribe( res => {
       if (res) {
         this.userInfo = res
-        console.log(this.userInfo)
       }
     })
   }
