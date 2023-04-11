@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HsHeroesComponent } from './components/hs-heroes/hs-heroes.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'Login', component: LoginComponent },
   { path: 'SignIn', component: RegisterComponent },
   { path: 'Start', component: StartComponent },
+  { path: 'HS-Hero/:id', component: HsHeroesComponent },
   { path: 'Verify-Email', component: VerifyEmailComponent },
   { path: 'Reset-Password', component: ResetPassComponent },
   {

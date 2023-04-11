@@ -73,8 +73,7 @@ export class RegisterComponent  implements OnInit {
     const confirmPassword = this.userRegister.value.confirmPassword;
 
     if(password !== confirmPassword) {
-      this.toastr.error('Las contraseñas no coinciden', 'Error');
-      console.log('Las contraseñas no coinciden')
+      this.toastr.error('Passwords do not match', 'Error');
       return;
     }
 
@@ -100,7 +99,7 @@ export class RegisterComponent  implements OnInit {
     this.afAuth.currentUser.then(user => user?.sendEmailVerification())
     .then(() => {
       this.authSvc.logout();
-      this.toastr.info('Se envio un correo con el link de verificación', 'Verificar Email')
+      this.toastr.info('Verification link has been sent', 'Verify Email')
       this.router.navigate(['/Verify-Email'])
       
     });

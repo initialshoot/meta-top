@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="main"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ hero }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <div *ngFor="let deck of decks" class="card m-5 bg-dark" style="width: 80vw;">
+        <div style="overflow: hidden;">
+            <img src="{{ deck.image }}" class="card-img-top" alt="Deck Image">
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title text-center fs-1">{{ deck.name }}</h5>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button (click)='copyDeck(deck.code)' type="button" class="btn btn-secondary btn-lg rounded-pill mb-5 mt-5">Copy Deck</button>
+            </div>
+        </div>
+
+    </div>
+
+</ion-content>

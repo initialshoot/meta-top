@@ -28,10 +28,11 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { StartComponent } from './components/start/start.component';
 import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
+import { HsHeroesComponent } from './components/hs-heroes/hs-heroes.component';
 
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent,RegisterComponent,StartComponent,VerifyEmailComponent,SpinnerComponent,ResetPassComponent],
+  declarations: [AppComponent,LoginComponent,RegisterComponent,StartComponent,VerifyEmailComponent,SpinnerComponent,ResetPassComponent,HsHeroesComponent],
   imports: [
     CommonModule,
     BrowserModule, 
