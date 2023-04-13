@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'is.meta.top',
   appName: 'meta-top',
   webDir: 'www',
   bundledWebRuntime: false

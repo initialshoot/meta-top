@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { ToastrService } from 'ngx-toastr';
+import { Clipboard } from '@capacitor/clipboard';
 
 
 declare var google: { maps: { Map: new (arg0: any, arg1: { center: { lat: number; lng: number; }; zoom: number; disableDefaultUI: boolean; }) => any; InfoWindow: new () => any; ControlPosition: { TOP_CENTER: string | number; }; event: { addListenerOnce: (arg0: any, arg1: string, arg2: () => void) => void; }; }; }
@@ -34,13 +35,9 @@ export class FolderPage implements OnInit {
   }
 
   async copyDeck(text: string) {
-    if (navigator.clipboard) {
-      try {
-        await navigator.clipboard.writeText(text);
-        this.toastr.show('Deck Copied!');
-      } catch (err) {}
-    }
-  }
+    await Clipboard.write({string: text});
+    this.toastr.show('Deck Copied!')
+}
 
 // Load Map functions
 

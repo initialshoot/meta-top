@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">meta-top</string>
+    <string name="title_activity_main">meta-top</string>
+    <string name="package_name">is.meta.top</string>
+    <string name="custom_url_scheme">is.meta.top</string>
+</resources>

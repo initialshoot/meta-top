@@ -9,9 +9,9 @@
 
 <ion-content [fullscreen]="true">
 
-    <div *ngFor="let deck of decks" class="card mt-2 ms-5 mx-5 mb-1 bg-dark" style="width: 80vw;">
-        <div style="overflow: hidden;">
-            <img src="{{ deck.image }}" class="card-img-top" alt="Deck Image">
+    <div *ngFor="let deck of decks" class="card m-5 bg-dark" style="width: 80vw;">
+        <div style="overflow: hidden;" class="d-flex justify-content-center m-2">
+            <img src="{{ deck.image }}" class="img-fluid" alt="Deck Image">
         </div>
 
         <div class="card-body">
